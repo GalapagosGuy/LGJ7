@@ -7,7 +7,7 @@ public abstract class InteractableObject : MonoBehaviour
 {
     protected ItemSlot itemSlot;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         itemSlot = GetComponent<ItemSlot>();
     }
