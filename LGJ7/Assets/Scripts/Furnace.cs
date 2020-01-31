@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Furnace : InteractableObject
 {
-
+    private float time = 0;
     public override void Use(ItemSlot playersItemSlot)
     {
-        if (playersItemSlot.Item)
+        if (playersItemSlot.Item && !playersItemSlot.Item.GetComponent<Sword>().IsHeated)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);
 
             playersItemSlot.RemoveItemFromSlot();
 
-            startHeating();
         }
         else if (!playersItemSlot.Item && itemSlot.Item.GetComponent<Sword>().IsHeated)
         {
@@ -25,11 +24,23 @@ public class Furnace : InteractableObject
     }
     void Update()
     {
-        
+        if(itemSlot.Item != null && !itemSlot.Item.GetComponent<Sword>().IsHeated )
+        {
+            Heating();
+        }
     }
-    private void startHeating()
+    private void Heating()
     {
-
+        
+        if(itemSlot.Item.GetComponent<Sword>().TimeToHeat > time)
+        {
+            time += Time.deltaTime;
+        }
+        else
+        {
+            itemSlot.Item.GetComponent<Sword>().Preheat();
+            itemSlot.Item.GetComponentInChildren<MeshRenderer>().sharedMaterial.color = Color.red;
+        }
     }
     
 }
