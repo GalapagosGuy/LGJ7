@@ -2,6 +2,7 @@
 {
     Sword,
     Armor,
-    Shield
+    Shield,
+    Ore
 }
 
