@@ -39,7 +39,7 @@ public class Furnace : InteractableObject
         else
         {
             itemSlot.Item.GetComponent<Sword>().Preheat();
-            itemSlot.Item.GetComponentInChildren<MeshRenderer>().sharedMaterial.color = Color.red;
+            itemSlot.Item.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
         }
     }
     
