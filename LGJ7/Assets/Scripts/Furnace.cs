@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Furnace : InteractableObject
 {
@@ -13,9 +14,12 @@ public class Furnace : InteractableObject
     [SerializeField]
     private int maxHeatLevel = 20;
 
+    [SerializeField]
+    private Slider heatSlider;
     private void Start()
     {
         InvokeRepeating("DecreaseHeatLevel", 0, 1);
+        GetComponentInChildren<Slider>().value = 0;
     }
 
 
@@ -28,9 +32,10 @@ public class Furnace : InteractableObject
             itemSlot.AddItemToSlot(playersItemSlot.Item);
 
             playersItemSlot.RemoveItemFromSlot();
+            itemSlot.Item.GetComponentInChildren<Slider>().value = 0;
 
         }
-        else if (!playersItemSlot.Item && itemSlot.Item.GetComponent<Sword>().IsHeated)
+        else if (!playersItemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsHeated)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
 
@@ -52,6 +57,8 @@ public class Furnace : InteractableObject
         if(itemSlot.Item.GetComponent<Sword>().TimeToHeat > time && heatLevel >= minimumHeat)
         {
             time += Time.deltaTime;
+            
+            itemSlot.Item.GetComponentInChildren<Slider>().value = time / itemSlot.Item.GetComponent<Sword>().TimeToHeat;
         }
         else if (itemSlot.Item.GetComponent<Sword>().TimeToHeat <= time)
         {
@@ -63,7 +70,7 @@ public class Furnace : InteractableObject
     public void PreheatFurnace()
     {
         heatLevel += 5;
-
+        heatSlider.value = heatLevel / (float)maxHeatLevel;
         if (heatLevel > maxHeatLevel)
             heatLevel = maxHeatLevel;
     }
@@ -71,7 +78,9 @@ public class Furnace : InteractableObject
     public void DecreaseHeatLevel()
     {
         heatLevel--;
-
+        heatSlider.value = heatLevel / (float)maxHeatLevel;
+        if (heatSlider.value < heatLevel / (float)maxHeatLevel)
+            heatSlider.GetComponentInChildren<Image>().color = Color.blue;
         if (heatLevel < 0)
             heatLevel = 0;
     }
