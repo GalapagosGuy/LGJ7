@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
+    [SerializeField] private GameObject playerModel;
 
     private float movementSpeed;
 
@@ -35,8 +36,8 @@ public class PlayerMove : MonoBehaviour
         float vertInput = Input.GetAxis(verticalInputName);
         float horizInput = Input.GetAxis(horizontalInputName);
 
-        Vector3 move = transform.right * horizInput + transform.forward * vertInput;
-
-        charController.Move(move * movementSpeed * Time.deltaTime);    
+        Vector3 movement = new Vector3(horizInput, 0.0f, vertInput);
+        if (movement != Vector3.zero) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement.normalized), 0.2f);
+        transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
     }
 }
