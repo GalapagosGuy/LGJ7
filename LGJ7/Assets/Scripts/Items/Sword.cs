@@ -5,6 +5,8 @@ using UnityEngine;
 public class Sword : Item
 {
     [SerializeField]
+    private bool isBroken = true;
+    [SerializeField]
     private bool isHeated = false;
     [SerializeField]
     private bool isForged = false;
@@ -16,6 +18,7 @@ public class Sword : Item
     private int requiredOres = 2;
     private int timeToHeat = 5;
 
+    public bool IsBroken { get => isBroken; }
     public bool IsHeated { get => isHeated; }
     public bool IsForged { get => isForged; }
     public bool IsChilled { get => isChilled; }
@@ -26,6 +29,7 @@ public class Sword : Item
 
     public void Preheat()
     {
+        isBroken = false;
         isHeated = true;
     }
 
