@@ -7,7 +7,7 @@ public class Furnace : InteractableObject
     private float time = 0;
     public override void Use(ItemSlot playersItemSlot)
     {
-        if (playersItemSlot.Item && !playersItemSlot.Item.GetComponent<Sword>().IsHeated)
+        if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Sword>().IsBroken)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);
 
