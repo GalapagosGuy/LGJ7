@@ -5,21 +5,27 @@ using UnityEngine;
 public class ItemSlot : MonoBehaviour
 {
     [SerializeField]
-    private GameObject slot = null;
+    private GameObject item = null;
 
-    public GameObject Slot { get => slot; set => slot = value; }
+    [SerializeField]
+    private GameObject itemSlot;
+
+    public GameObject Item { get => item; set => item = value; }
 
     public void AddItemToSlot(GameObject item)
     {
-        if (!slot)
-            slot = item;
+        if (!this.item)
+        {
+            this.item = item;
+            item.transform.position = itemSlot.transform.position;
+        }
         else
             Debug.Log("Player's slot is not empty!");
     }
 
     public void RemoveItemFromSlot()
     {
-        slot = null;
+        this.item = null;
         Debug.Log("Player's slot is empty. Item has been removed!");
     }
 }
