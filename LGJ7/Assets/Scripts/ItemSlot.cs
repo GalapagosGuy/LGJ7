@@ -17,7 +17,9 @@ public class ItemSlot : MonoBehaviour
         if (!this.item)
         {
             this.item = item;
+
             item.transform.position = itemSlot.transform.position;
+            item.transform.parent = itemSlot.transform;
         }
         else
             Debug.Log("Player's slot is not empty!");
