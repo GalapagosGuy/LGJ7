@@ -8,6 +8,6 @@ public class PlayerController : MonoBehaviour
 
     public void ActivateInteractableObject()
     {
-
+        interactableObject.Use();
     }
 }
