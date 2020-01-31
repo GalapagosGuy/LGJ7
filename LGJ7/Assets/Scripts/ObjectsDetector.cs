@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class ObjectsDetector : MonoBehaviour
 {
+    private PlayerController playerController;
+
+    private void Start()
+    {
+        playerController = GetComponentInParent<PlayerController>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "InteractableObject")
         {
             Debug.Log("I SEE HIM!");
+            playerController?.SetInteractableObject(other.GetComponent<InteractableObject>());
         }
     }
 
@@ -17,6 +25,7 @@ public class ObjectsDetector : MonoBehaviour
         if (other.tag == "InteractableObject")
         {
             Debug.Log("WHERE IS IT?!?!!?");
+            playerController?.SetInteractableObject(null);
         }
     }
 }
