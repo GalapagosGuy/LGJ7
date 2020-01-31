@@ -13,4 +13,5 @@ public abstract class InteractableObject : MonoBehaviour
     }
 
     public abstract void Use(ItemSlot playersItemSlot);
+    
 }
