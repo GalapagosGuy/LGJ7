@@ -40,7 +40,8 @@ public class PlayerMove : MonoBehaviour
 
         Vector3 movement = new Vector3(horizInput, 0.0f, vertInput);
         if (movement != Vector3.zero) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement.normalized), 0.2f);
-       // rb.AddForce(movement * movementSpeed);
-        transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
+        // rb.AddForce(movement * movementSpeed);
+        charController.Move(movement * movementSpeed * Time.deltaTime);
+        //transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
     }
 }
