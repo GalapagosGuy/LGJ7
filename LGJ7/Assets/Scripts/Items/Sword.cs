@@ -14,12 +14,15 @@ public class Sword : Item
     private bool isReady = false;
     [SerializeField]
     private int requiredOres = 2;
+    private int timeToHeat = 5;
 
     public bool IsHeated { get => isHeated; }
     public bool IsForged { get => isForged; }
     public bool IsChilled { get => isChilled; }
     public bool IsReady { get => isReady; }
     public int RequiredOres { get => requiredOres; }
+    public int TimeToHeat { get => timeToHeat; }
+
 
     public void Preheat()
     {

@@ -13,7 +13,7 @@ public class ObjectsDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "InteractableObject")
+        if(other.GetComponent<InteractableObject>())
         {
             Debug.Log("I SEE HIM!");
             playerController?.SetInteractableObject(other.GetComponent<InteractableObject>());
@@ -22,7 +22,7 @@ public class ObjectsDetector : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "InteractableObject")
+        if (other.GetComponent<InteractableObject>())
         {
             Debug.Log("WHERE IS IT?!?!!?");
             playerController?.SetInteractableObject(null);
