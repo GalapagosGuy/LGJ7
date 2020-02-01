@@ -21,7 +21,7 @@ public class Anvil : InteractableObject
         {
             CheckMiniGameStatus();
         }
-        else if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Sword>() 
+        else if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Sword>() 
             && playersItemSlot.Item.GetComponent<Sword>().IsHeated)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);

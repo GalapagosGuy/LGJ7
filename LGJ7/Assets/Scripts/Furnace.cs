@@ -27,7 +27,7 @@ public class Furnace : InteractableObject
 
     public override void Use(ItemSlot playersItemSlot)
     {
-        if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Sword>().IsBroken)
+        if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Sword>().IsBroken)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);
 
