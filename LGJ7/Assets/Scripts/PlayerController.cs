@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerController : Character
 {
     private InteractableObject interactableObject;
+    [SerializeField]
+    private int healthRegen = 5;
     private ItemSlot itemSlot;
 
     private Animator animator;
@@ -16,6 +18,9 @@ public class PlayerController : Character
 
         itemSlot = GetComponent<ItemSlot>();
         animator = GetComponentInChildren<Animator>();
+       
+        InvokeRepeating("RegenerateHealth", 0, 5);
+
     }
 
     public void ActivateInteractableObject()
@@ -33,6 +38,7 @@ public class PlayerController : Character
 
     private int attackNumber = 0;
 
+    
     public void Attack()
     {
         if(GetComponentInChildren<Weapon>())
@@ -42,5 +48,10 @@ public class PlayerController : Character
         animator.SetTrigger("attackTrigger");
 
         attackNumber++;
+    }
+
+    private void RegenerateHealth()
+    {
+        AddHealth(healthRegen);
     }
 }
