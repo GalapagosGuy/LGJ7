@@ -66,7 +66,8 @@ public class Furnace : InteractableObject
         {
             time += Time.deltaTime;
 
-            itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = time / itemSlot.Item.GetComponent<Item>().TimeToHeat;
+            fillableCircle.fillAmount = time / itemSlot.Item.GetComponent<Item>().TimeToHeat;
+            
         }
         else if (itemSlot.Item.GetComponent<Item>().TimeToHeat <= time)
         {

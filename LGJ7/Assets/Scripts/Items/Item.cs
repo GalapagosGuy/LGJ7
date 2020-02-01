@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class Item : Weapon
 {
+
+    protected string nextRecipe;
+    public virtual string NextRecipe { get => nextRecipe; }
+
     [SerializeField]
     private ITEMTYPE type;
 
@@ -61,6 +65,10 @@ public abstract class Item : Weapon
         }
     }
 
+    public virtual string GetNextRecipe()
+    {
+        return type.ToString();
+    }
     public void SetModelToRepaired()
     {
         Destroy(this.transform.GetChild(0).GetChild(0).gameObject);

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sword : Item
 {
+    
     [SerializeField]
     private List<GameObject> brokenSwords = new List<GameObject>();
 
@@ -21,7 +23,27 @@ public class Sword : Item
 
         brokenSword.transform.localScale = new Vector3(1,1,1);
     }
-
+    
+    public override string GetNextRecipe()
+    {
+        if (isBroken)
+        {
+            nextRecipe = "Fire up your item in the furnace";
+        }
+        if (isHeated)
+        {
+            nextRecipe = "Go to the anvil, add " + requiredOres + "ores and hammer the item";
+        }
+        if (isForged)
+        {
+            nextRecipe = "Go to the bucket and chill your item";
+        }
+        if (isReady)
+        {
+            nextRecipe = "Give the item to the customer";
+        }
+        return nextRecipe;
+    }
     public void SetModelToRepaired()
     {
         Destroy(this.transform.GetChild(0).GetChild(0).gameObject);
