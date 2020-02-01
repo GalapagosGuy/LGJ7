@@ -13,7 +13,6 @@ public class PlayerKeyboardController : MonoBehaviour
     {
         if(Input.GetButtonDown(playerAction))
         {
-            
             playerController.ActivateInteractableObject();
         }
       
