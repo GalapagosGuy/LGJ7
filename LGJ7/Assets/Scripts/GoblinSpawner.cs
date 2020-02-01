@@ -17,7 +17,7 @@ public class GoblinSpawner : MonoBehaviour
 
     private void Start()
     {
-        SpawnWave();
+        InvokeRepeating("SpawnWave", 60, 60);
     }
 
     public void SpawnWave()
@@ -31,7 +31,7 @@ public class GoblinSpawner : MonoBehaviour
     {
         GameObject goblin = Instantiate(goblinPrefab, transform.position, transform.rotation);
 
-        goblin.GetComponent<GoblinController>().player = playerReferences[playerIndex];
+        goblin.GetComponent<GoblinAI>().target = playerReferences[playerIndex];
 
         spawnedGoblins++;
 

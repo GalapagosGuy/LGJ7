@@ -104,9 +104,9 @@ GameObject:
   - component: {fileID: 6404020024929960048}
   - component: {fileID: 6404020024929960049}
   - component: {fileID: 6404020024929960051}
-  - component: {fileID: 6404020024929960060}
   - component: {fileID: 6404020024929960050}
   - component: {fileID: 799835285988807516}
+  - component: {fileID: 806735639401762978}
   m_Layer: 0
   m_Name: Cup
   m_TagString: InteractableObject
@@ -189,20 +189,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   itemSlot: {fileID: 6404020025426539695}
---- !u!114 &6404020024929960060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6404020024929960061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 789ec6f05955a784c8f3eb0c899adbe6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderBackground: {fileID: 0}
-  waterLevelSlider: {fileID: 0}
 --- !u!65 &6404020024929960050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -228,7 +214,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22cae9d6db7aed4d927d38bb2092bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: Enemy
+  damage: 15
   type: 0
+--- !u!65 &806735639401762978
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404020024929960061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940698}
 --- !u!1 &6404020025426539695
 GameObject:
   m_ObjectHideFlags: 0

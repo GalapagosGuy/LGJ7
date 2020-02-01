@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35018a951031394a8a4dd3b77a45706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goblinPrefab: {fileID: 2941426272550827990, guid: 5e6f01011cd1c864f8642e50bd4c573d,
+  goblinPrefab: {fileID: 7116964926366221386, guid: 39316f3685058624584735d3edb0f642,
     type: 3}
   numberOfGoblinsToSpawn: 10
-  playerReference: {fileID: 0}
+  playerReferences: []

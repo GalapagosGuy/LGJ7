@@ -4,26 +4,62 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class GoblinController : MonoBehaviour
+public class GoblinController : Character
 {
     private NavMeshAgent agent;
 
-    [SerializeField]
-    public GameObject player;
+    private Animator animator;
 
-    private void Awake()
+    private bool canDoAction = true;
+
+    protected override void Awake()
     {
+        base.Awake();
         agent = GetComponent<NavMeshAgent>();
-    }
-
-    private void Update()
-    {
-        if(player)
-            GoTo(player.transform.position);
+        animator = GetComponent<Animator>();
     }
 
     public void GoTo(Vector3 target)
     {
-        agent.SetDestination(target);
+        if (canDoAction)
+        {
+            agent.isStopped = false;
+            agent.SetDestination(target);
+            animator.SetBool("isRunning", true);
+        }
+        else
+            agent.isStopped = true;
+    }
+
+    public void Attack()
+    {
+        if (canDoAction)
+        {
+            animator.SetTrigger("attackTrigger");
+        }
+    }
+
+    public void LockActions()
+    {
+        canDoAction = false;
+    }
+
+    public void UnlockActions()
+    {
+        canDoAction = true;
+    }
+
+    public Collider weaponCollider;
+    public Weapon weapon;
+
+    public void AllowToDealDamage()
+    {
+        weapon.Reset();
+        weaponCollider.enabled = true;
+    }
+
+    public void LockDealingDamage()
+    {
+        weaponCollider.enabled = false;
     }
 }

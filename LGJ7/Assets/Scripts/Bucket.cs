@@ -33,6 +33,7 @@ public class Bucket : InteractableObject
             itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = 0;
             playersItemSlot.RemoveItemFromSlot();
 
+            itemSlot.Item.transform.GetChild(0).transform.Rotate(0, 180, 0);
         }
         else if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Cup>())
         {

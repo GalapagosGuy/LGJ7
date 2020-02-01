@@ -3,6 +3,7 @@
     Sword,
     Armor,
     Shield,
-    Ore
+    Ore,
+    Fist
 }
 
