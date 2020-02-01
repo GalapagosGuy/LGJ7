@@ -796,10 +796,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 225186610, guid: 1f460d0a2795a1544a43ee5aa299db27, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f460d0a2795a1544a43ee5aa299db27, type: 3}
 --- !u!1 &1075856739
@@ -1045,6 +1041,14 @@ PrefabInstance:
     - target: {fileID: 51292461, guid: 1f460d0a2795a1544a43ee5aa299db27, type: 3}
       propertyPath: playerAction
       value: ActionPlayer2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108849726, guid: 1f460d0a2795a1544a43ee5aa299db27, type: 3}
+      propertyPath: playerAction
+      value: ActionPlayer2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108849726, guid: 1f460d0a2795a1544a43ee5aa299db27, type: 3}
+      propertyPath: playerAttack
+      value: AttackPlayer2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f460d0a2795a1544a43ee5aa299db27, type: 3}

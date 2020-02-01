@@ -11,17 +11,32 @@ public class PlayerKeyboardController : MonoBehaviour
     [SerializeField]
     private string playerAttack;
 
+    private bool lockActions = false;
+
     private void Update()
     {
-        if(Input.GetButtonDown(playerAction))
+        if(!lockActions)
         {
-            playerController.ActivateInteractableObject();
-        }
+            if (Input.GetButtonDown(playerAction))
+            {
+                playerController.ActivateInteractableObject();
+            }
 
-        if (Input.GetButtonDown(playerAttack))
-        {
-            playerController.Attack();
+            if (Input.GetButtonDown(playerAttack))
+            {
+                playerController.Attack();
+            }
         }
+    }
 
+    public void LockAnimActions()
+    {
+        lockActions = true;
+    }
+
+
+    public void UnlockAnimActions()
+    {
+        lockActions = false;
     }
 }

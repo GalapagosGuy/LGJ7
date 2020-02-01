@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 51292460}
-  - component: {fileID: 51292461}
   m_Layer: 9
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -31,21 +30,6 @@ Transform:
   m_Father: {fileID: 1193090395624036437}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &51292461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51292459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54be05c1dc755444ca5291c9365d07ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 6943296193391748749}
-  playerAction: ActionPlayer1
-  playerAttack: AttackPlayer1
 --- !u!1 &1193090394728754744
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +321,7 @@ GameObject:
   - component: {fileID: 225186610}
   - component: {fileID: 2097788274}
   - component: {fileID: 5118134553477364227}
+  - component: {fileID: 2108849726}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -472,6 +457,21 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &2108849726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193090395624036439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54be05c1dc755444ca5291c9365d07ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 6943296193391748749}
+  playerAction: ActionPlayer1
+  playerAttack: AttackPlayer1
 --- !u!1 &1193090396073445851
 GameObject:
   m_ObjectHideFlags: 0
