@@ -26,7 +26,10 @@ public class Axe : Item
 
         repairedSwordInst.transform.localScale = new Vector3(1, 1, 1);
     }*/
-
+    public override string GetNextRecipe()
+    {
+        return "Same as sword + workstation with 2 woods needed";
+    }
     public override void Preheat()
     {
         base.Preheat();
