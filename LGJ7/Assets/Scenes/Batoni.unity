@@ -143,18 +143,6 @@ Transform:
   m_Father: {fileID: 1206695638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &191155355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 191155355, guid: 3e21a3ead0f197d42beb1ca0227e6ef5,
-    type: 3}
-  m_PrefabInstance: {fileID: 6083756556529286557}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &308526011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,11 +1381,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6083756556357105119, guid: 3e21a3ead0f197d42beb1ca0227e6ef5,
-        type: 3}
-      propertyPath: heatSlider
-      value: 
-      objectReference: {fileID: 191155355}
     - target: {fileID: 941749213, guid: 3e21a3ead0f197d42beb1ca0227e6ef5, type: 3}
       propertyPath: mycamera
       value: 
@@ -1406,10 +1389,6 @@ PrefabInstance:
       propertyPath: mycamera
       value: 
       objectReference: {fileID: 752896092}
-    - target: {fileID: 1807018825, guid: 3e21a3ead0f197d42beb1ca0227e6ef5, type: 3}
-      propertyPath: m_Name
-      value: Background
-      objectReference: {fileID: 0}
     - target: {fileID: 1538032214, guid: 3e21a3ead0f197d42beb1ca0227e6ef5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

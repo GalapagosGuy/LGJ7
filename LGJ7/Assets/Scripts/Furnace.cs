@@ -16,6 +16,10 @@ public class Furnace : InteractableObject
 
     [SerializeField]
     private Slider heatSlider;
+
+    [SerializeField]
+    private Image sliderBackground;
+
     private void Start()
     {
         InvokeRepeating("DecreaseHeatLevel", 0, 1);
@@ -71,6 +75,8 @@ public class Furnace : InteractableObject
     {
         heatLevel += 5;
         heatSlider.value = heatLevel / (float)maxHeatLevel;
+        if (heatLevel >= minimumHeat)
+            sliderBackground.color = Color.red;
         if (heatLevel > maxHeatLevel)
             heatLevel = maxHeatLevel;
     }
@@ -79,8 +85,8 @@ public class Furnace : InteractableObject
     {
         heatLevel--;
         heatSlider.value = heatLevel / (float)maxHeatLevel;
-        if (heatSlider.value < heatLevel / (float)maxHeatLevel)
-            heatSlider.GetComponentInChildren<Image>().color = Color.blue;
+        if (heatLevel < minimumHeat)
+            sliderBackground.color = Color.blue;
         if (heatLevel < 0)
             heatLevel = 0;
     }
