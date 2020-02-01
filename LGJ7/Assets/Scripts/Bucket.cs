@@ -15,7 +15,7 @@ public class Bucket : InteractableObject
             playersItemSlot.RemoveItemFromSlot();
 
         }
-        else if (!playersItemSlot.Item && itemSlot.Item.GetComponent<Sword>().IsChilled)
+        else if (!playersItemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsChilled)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
 
@@ -41,6 +41,7 @@ public class Bucket : InteractableObject
         {
             itemSlot.Item.GetComponent<Sword>().Chill();
             itemSlot.Item.GetComponentInChildren<MeshRenderer>().material.color = Color.blue;
+            time = 0;
         }
     }
 
