@@ -62,6 +62,8 @@ public class EnchantTable : InteractableObject
 
     private ItemSlot playersItemSlotCopy;
 
+    int activePlayer = 0;
+
     private void StartMiniGame(ItemSlot playersItemSlot)
     {
         password.Clear();
@@ -73,6 +75,8 @@ public class EnchantTable : InteractableObject
 
         if (playersItemSlot.transform.root.name == "Player")
         {
+            activePlayer = 0;
+
             for (int i = 0; i < 4; i++)
             {
                 switch (Random.Range(0, 3))
@@ -91,6 +95,8 @@ public class EnchantTable : InteractableObject
         }
         else
         {
+            activePlayer = 1;
+
             for (int i = 0; i < 4; i++)
             {
                 switch (Random.Range(0, 3))
@@ -148,7 +154,7 @@ public class EnchantTable : InteractableObject
         {
             Debug.Log("MiniGame working");
 
-            if(Input.anyKeyDown && password.Count != 0 && playersItemSlotCopy.transform.root.gameObject.GetComponent<PlayerController>().InteractableObject == this)
+            if(activePlayer == 0 && Input.anyKeyDown && password.Count != 0 && playersItemSlotCopy.transform.root.gameObject.GetComponent<PlayerController>().InteractableObject == this)
             {
                 if (Input.GetKeyDown(password[activeSlot]))
                 {
@@ -181,7 +187,7 @@ public class EnchantTable : InteractableObject
                 }
             }
 
-            if(playersItemSlotCopy.transform.root.gameObject.GetComponent<PlayerController>().InteractableObject == this)
+            if(activePlayer == 1 && playersItemSlotCopy.transform.root.gameObject.GetComponent<PlayerController>().InteractableObject == this)
             {
                 if((Input.GetButtonDown("Player2ActionL1") && passwordString[activeSlot] == "Player2ActionL1")
                     || (Input.GetButtonDown("Player2ActionR1") && passwordString[activeSlot] == "Player2ActionR1")
