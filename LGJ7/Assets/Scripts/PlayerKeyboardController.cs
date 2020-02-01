@@ -6,13 +6,16 @@ public class PlayerKeyboardController : MonoBehaviour
 {
     [SerializeField]
     private PlayerController playerController;
-
+    [SerializeField]
+    private string playerAction;
+    
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetButtonDown(playerAction))
         {
-            Debug.Log("E pressed");
+            
             playerController.ActivateInteractableObject();
         }
+      
     }
 }

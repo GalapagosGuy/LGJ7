@@ -7,6 +7,8 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
+    [SerializeField] private string interactButtonName;
+   
     [SerializeField] private GameObject playerModel;
 
     private float movementSpeed;
