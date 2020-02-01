@@ -32,8 +32,8 @@ public class Bucket : InteractableObject
         if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Sword>() && playersItemSlot.Item.GetComponent<Sword>().IsForged)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);
-            itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(true);
-            itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = 0;
+            fillableCircle.transform.parent.gameObject.SetActive(true);
+            fillableCircle.fillAmount = 0;
             playersItemSlot.RemoveItemFromSlot();
 
             itemSlot.Item.transform.GetChild(0).transform.Rotate(0, 180, 0);
@@ -50,7 +50,7 @@ public class Bucket : InteractableObject
         else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsChilled)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
-            itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(false);
+            fillableCircle.transform.parent.gameObject.SetActive(false);
             itemSlot.RemoveItemFromSlot();
 
             particles.Stop();
@@ -70,7 +70,7 @@ public class Bucket : InteractableObject
         if (timeOfChilling > time && waterLevel > 0)
         {
             time += Time.deltaTime;
-            itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = time / timeOfChilling;
+            fillableCircle.fillAmount = time / timeOfChilling;
         }
         else if(timeOfChilling <= time)
         {

@@ -54,7 +54,8 @@ public class Anvil : InteractableObject
         else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsForged)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
-            itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(false);
+            fillableCircle.transform.parent.gameObject.SetActive(false);
+           // itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(false);
             itemSlot.RemoveItemFromSlot();
         }
     }
@@ -86,8 +87,8 @@ public class Anvil : InteractableObject
     {
         miniGameSlider.gameObject.SetActive(true);
         miniGameActive = true;
-        itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(true);
-        itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = 0;
+        fillableCircle.transform.parent.gameObject.SetActive(true);
+        fillableCircle.fillAmount = 0;
 
         SetRandomCorrectArea();
     }
@@ -123,7 +124,7 @@ public class Anvil : InteractableObject
             hits = requiredHits;
 
         SetRandomCorrectArea();
-        itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = (5 - hits) / (float)requiredHits;
+        fillableCircle.fillAmount  = (5 - hits) / (float)requiredHits;
         //itemSlider.value = (5 - hits) / (float)requiredHits;
     }
 
