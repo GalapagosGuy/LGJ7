@@ -555,8 +555,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3229643760777813812}
-  - component: {fileID: 7072534544255114779}
   - component: {fileID: 6604778754180259039}
+  - component: {fileID: 1090836055375876165}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -581,36 +581,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7072534544255114779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3229643760777813811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 510bee2699c9e7547a79c6587ca3695f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyType: Enemy
-  damage: 25
-  type: 0
-  isBroken: 1
-  isHeated: 0
-  isForged: 0
-  isChilled: 0
-  isReady: 0
-  isWoodEnchanted: 0
-  requiredOres: 2
-  requiredWoods: 1
-  brokenItems:
-  - {fileID: 100000, guid: a3640e2f6be1d3f40a5a38d61889a598, type: 3}
-  repairedItem: {fileID: 100000, guid: a3640e2f6be1d3f40a5a38d61889a598, type: 3}
-  brokenSwords:
-  - {fileID: 100000, guid: a3640e2f6be1d3f40a5a38d61889a598, type: 3}
-  repairedSword: {fileID: 100000, guid: a3640e2f6be1d3f40a5a38d61889a598, type: 3}
-  fireParticles: {fileID: 8298157785602425551}
 --- !u!54 &6604778754180259039
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -627,6 +597,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1090836055375876165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3229643760777813811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f0f102f1b545f449e11de5e527d403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 
+  damage: 0
+  type: 7
+  isBroken: 0
+  isHeated: 0
+  isForged: 0
+  isChilled: 1
+  isReady: 0
+  isWoodEnchanted: 0
+  requiredOres: 2
+  requiredWoods: 2
+  brokenItems:
+  - {fileID: 100000, guid: a3640e2f6be1d3f40a5a38d61889a598, type: 3}
+  repairedItem: {fileID: 100000, guid: a3640e2f6be1d3f40a5a38d61889a598, type: 3}
+  fireParticles: {fileID: 0}
 --- !u!1 &3636527520785397917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,12 +1109,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e04dea75bb0c7244391be733f5355ac4, type: 3}
---- !u!1 &8298157785602425551 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1053144852451064, guid: e04dea75bb0c7244391be733f5355ac4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8298805208355064887}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8296895338948649389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4284814539271578, guid: e04dea75bb0c7244391be733f5355ac4,

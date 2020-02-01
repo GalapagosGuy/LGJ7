@@ -8,8 +8,8 @@ public class TransactionsPlace : InteractableObject
     private GameManager gameManager;
     public override void Use(ItemSlot playersItemSlot)
     {
-        if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Sword>() 
-            && playersItemSlot.Item.GetComponent<Sword>().IsReady)
+        if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Item>() 
+            && playersItemSlot.Item.GetComponent<Item>().IsReady)
         {
             gameManager.AddGeld(100);
             Destroy(playersItemSlot.Item);

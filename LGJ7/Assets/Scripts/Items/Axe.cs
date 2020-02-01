@@ -5,58 +5,27 @@ using UnityEngine;
 public class Axe : Item
 {
     [SerializeField]
-    private bool isBroken = true;
-    [SerializeField]
-    private bool isHeated = false;
-    [SerializeField]
-    private bool isForged = false;
-    [SerializeField]
-    private bool isChilled = false;
-    [SerializeField]
-    private bool isWoodEnchanted = false;
-    [SerializeField]
-    private bool isReady = false;
-    [SerializeField]
-    private int requiredOres = 3;
-    private int timeToHeat = 10;
-
-    [SerializeField]
-    private List<GameObject> brokenAxes = new List<GameObject>();
-
-    [SerializeField]
-    private GameObject repairedAxe;
-
-    public bool IsBroken { get => isBroken; }
-    public bool IsHeated { get => isHeated; }
-    public bool IsForged { get => isForged; }
-    public bool IsChilled { get => isChilled; }
-    public bool IsReady { get => isReady; }
-    public int RequiredOres { get => requiredOres; }
-    public int TimeToHeat { get => timeToHeat; }
-    public bool IsWoodEnchanted { get => isWoodEnchanted; set => isWoodEnchanted = value; }
-
-    [SerializeField]
     private GameObject fireParticles;
 
-    private void Start()
+    /*private void Start()
     {
         GameObject brokenSword = Instantiate(brokenAxes[Random.Range(0, brokenAxes.Count)], transform.position, transform.rotation);
 
         brokenSword.transform.parent = this.transform.GetChild(0);
 
         brokenSword.transform.localScale = new Vector3(1, 1, 1);
-    }
+    }*/
 
-    public void SetModelToRepaired()
+    /*public void SetModelToRepaired()
     {
         Destroy(this.transform.GetChild(0).GetChild(0).gameObject);
 
-        GameObject repairedSwordInst = Instantiate(repairedAxe, transform.position, transform.rotation);
+        GameObject repairedSwordInst = Instantiate(repai, transform.position, transform.rotation);
 
         repairedSwordInst.transform.parent = this.transform.GetChild(0);
 
         repairedSwordInst.transform.localScale = new Vector3(1, 1, 1);
-    }
+    }*/
 
     public override void Preheat()
     {

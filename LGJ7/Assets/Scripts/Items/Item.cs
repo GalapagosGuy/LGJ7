@@ -44,10 +44,10 @@ public abstract class Item : Weapon
     public bool IsWoodEnchanted { get => isWoodEnchanted; }
 
     [SerializeField]
-    private List<GameObject> brokenItems = new List<GameObject>();
+    protected List<GameObject> brokenItems = new List<GameObject>();
 
     [SerializeField]
-    private GameObject repairedItem;
+    protected GameObject repairedItem;
 
     private void Start()
     {
@@ -107,6 +107,7 @@ public abstract class Item : Weapon
     public virtual void Enchant()
     {
         isChilled = false;
+        isWoodEnchanted = true;
 
         GetComponentInChildren<MeshRenderer>().material.color = Color.cyan;
 

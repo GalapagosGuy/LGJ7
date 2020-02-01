@@ -6,6 +6,7 @@
     Ore,
     Fist,
     Cup,
-    Wood
+    Wood,
+    Axe
 }
 
