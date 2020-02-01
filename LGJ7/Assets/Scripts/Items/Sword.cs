@@ -5,32 +5,10 @@ using UnityEngine;
 public class Sword : Item
 {
     [SerializeField]
-    private bool isBroken = true;
-    [SerializeField]
-    private bool isHeated = false;
-    [SerializeField]
-    private bool isForged = false;
-    [SerializeField]
-    private bool isChilled = false;
-    [SerializeField]
-    private bool isReady = false;
-    [SerializeField]
-    private int requiredOres = 2;
-    private int timeToHeat = 7;
-
-    [SerializeField]
     private List<GameObject> brokenSwords = new List<GameObject>();
 
     [SerializeField]
     private GameObject repairedSword;
-
-    public bool IsBroken { get => isBroken; }
-    public bool IsHeated { get => isHeated; }
-    public bool IsForged { get => isForged; }
-    public bool IsChilled { get => isChilled; }
-    public bool IsReady { get => isReady; }
-    public int RequiredOres { get => requiredOres; }
-    public int TimeToHeat { get => timeToHeat; }
 
     [SerializeField]
     private GameObject fireParticles;
@@ -55,35 +33,41 @@ public class Sword : Item
         repairedSwordInst.transform.localScale = new Vector3(1, 1, 1);
     }
 
-    public void Preheat()
+    public override void Preheat()
     {
-        isBroken = false;
+        base.Preheat();
+        fireParticles.SetActive(true);
+        /*isBroken = false;
         isHeated = true;
         fireParticles.SetActive(true);
         GetComponentInChildren<MeshRenderer>().material.color = Color.red;
 
-        damage += 10;
+        damage += 10;*/
     }
 
-    public void Forge()
+    public override void Forge()
     {
-        fireParticles.SetActive(false);
+        base.Forge();
+        fireParticles.SetActive(false); 
+        /*fireParticles.SetActive(false);
         isHeated = false;
         isForged = true;
         GetComponentInChildren<MeshRenderer>().material.color = new Color(0.4f, 0, 0);
 
-        damage += 10;
+        damage += 10;*/
     }
 
-    public void Chill()
+    public override void Chill()
     {
-        isForged = false;
+        base.Chill();
+        isReady = true;
+        /*isForged = false;
         isChilled = true;
 
         GetComponentInChildren<MeshRenderer>().material.color = Color.cyan;
 
         isReady = true;
-
-        damage += 10;
+        
+        damage += 10;*/
     }
 }

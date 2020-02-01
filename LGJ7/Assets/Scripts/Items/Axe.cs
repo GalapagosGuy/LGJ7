@@ -58,27 +58,32 @@ public class Axe : Item
         repairedSwordInst.transform.localScale = new Vector3(1, 1, 1);
     }
 
-    public void Preheat()
+    public override void Preheat()
     {
+        base.Preheat();
+        fireParticles.SetActive(true);
+        /*
         isBroken = false;
         isHeated = true;
         fireParticles.SetActive(true);
         GetComponentInChildren<MeshRenderer>().material.color = Color.red;
 
-        damage += 10;
+        damage += 10;*/
     }
 
-    public void Forge()
+    public override void Forge()
     {
+        base.Forge();
         fireParticles.SetActive(false);
+        /*
         isHeated = false;
         isForged = true;
         GetComponentInChildren<MeshRenderer>().material.color = new Color(0.4f, 0, 0);
 
-        damage += 10;
+        damage += 10;*/
     }
 
-    public void Chill()
+    /*public void Chill()
     {
         isForged = false;
         isChilled = true;
@@ -86,17 +91,18 @@ public class Axe : Item
         GetComponentInChildren<MeshRenderer>().material.color = Color.cyan;
 
         damage += 10;
-    }
+    }*/
 
-
-    public void Enchant()
+    public override void Enchant()
     {
-        isChilled = false;
+        base.Enchant();
+        isReady = true;
+        /*isChilled = false;
 
         GetComponentInChildren<MeshRenderer>().material.color = Color.cyan;
 
         isReady = true;
 
-        damage += 10;
+        damage += 10;*/
     }
 }

@@ -31,7 +31,7 @@ public class Furnace : InteractableObject
 
     public override void Use(ItemSlot playersItemSlot)
     {
-        if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Sword>().IsBroken)
+        if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Item>().IsBroken)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);
 
@@ -40,7 +40,7 @@ public class Furnace : InteractableObject
             itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = 0;
 
         }
-        else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsHeated)
+        else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Item>() && itemSlot.Item.GetComponent<Item>().IsHeated)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
             itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(false);
@@ -51,7 +51,7 @@ public class Furnace : InteractableObject
 
     void Update()
     {
-        if(itemSlot.Item != null && !itemSlot.Item.GetComponent<Sword>().IsHeated )
+        if(itemSlot.Item != null && !itemSlot.Item.GetComponent<Item>().IsHeated )
         {
             Heating();
         }
@@ -59,15 +59,15 @@ public class Furnace : InteractableObject
 
     private void Heating()
     {     
-        if(itemSlot.Item.GetComponent<Sword>().TimeToHeat > time && heatLevel >= minimumHeat)
+        if(itemSlot.Item.GetComponent<Item>().TimeToHeat > time && heatLevel >= minimumHeat)
         {
             time += Time.deltaTime;
 
-            itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = time / itemSlot.Item.GetComponent<Sword>().TimeToHeat;
+            itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = time / itemSlot.Item.GetComponent<Item>().TimeToHeat;
         }
-        else if (itemSlot.Item.GetComponent<Sword>().TimeToHeat <= time)
+        else if (itemSlot.Item.GetComponent<Item>().TimeToHeat <= time)
         {
-            itemSlot.Item.GetComponent<Sword>().Preheat();
+            itemSlot.Item.GetComponent<Item>().Preheat();
             time = 0;
         }
     }

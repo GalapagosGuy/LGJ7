@@ -4,6 +4,8 @@
     Armor,
     Shield,
     Ore,
-    Fist
+    Fist,
+    Cup,
+    Wood
 }
 

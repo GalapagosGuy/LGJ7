@@ -216,7 +216,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: Enemy
   damage: 15
-  type: 0
+  type: 5
+  isBroken: 0
+  isHeated: 0
+  isForged: 0
+  isChilled: 0
+  isReady: 0
+  brokenItems: []
+  repairedItem: {fileID: 0}
 --- !u!65 &806735639401762978
 BoxCollider:
   m_ObjectHideFlags: 0

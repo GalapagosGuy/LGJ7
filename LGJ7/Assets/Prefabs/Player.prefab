@@ -60,6 +60,13 @@ MonoBehaviour:
   enemyType: Enemy
   damage: 5
   type: 4
+  isBroken: 0
+  isHeated: 0
+  isForged: 0
+  isChilled: 0
+  isReady: 0
+  brokenItems: []
+  repairedItem: {fileID: 0}
 --- !u!1 &3242690513828984737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1600,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  puffEffect: {fileID: 0}
+  hpBarSlider: {fileID: 0}
+  healthRegen: 5
 --- !u!54 &3242690515831307507
 Rigidbody:
   m_ObjectHideFlags: 0

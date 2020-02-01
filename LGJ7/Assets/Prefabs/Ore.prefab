@@ -95,6 +95,13 @@ MonoBehaviour:
   enemyType: Enemy
   damage: 20
   type: 3
+  isBroken: 0
+  isHeated: 0
+  isForged: 0
+  isChilled: 0
+  isReady: 0
+  brokenItems: []
+  repairedItem: {fileID: 0}
 --- !u!65 &1180903253265216350
 BoxCollider:
   m_ObjectHideFlags: 0
