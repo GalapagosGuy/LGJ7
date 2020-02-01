@@ -8,7 +8,7 @@ public class Bucket : InteractableObject
     private float timeOfChilling = 2;
     public override void Use(ItemSlot playersItemSlot)
     {
-        if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Sword>().IsForged)
+        if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Sword>().IsForged)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);
 
