@@ -215,13 +215,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: Enemy
-  damage: 15
+  damage: 10
   type: 5
   isBroken: 0
   isHeated: 0
   isForged: 0
   isChilled: 0
   isReady: 0
+  isWoodEnchanted: 0
+  requiredOres: 1
+  requiredWoods: 1
   brokenItems: []
   repairedItem: {fileID: 0}
 --- !u!65 &806735639401762978

@@ -666,6 +666,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 152c6c58474ba7346a2fc3fd06243bf0, type: 2}
+    - target: {fileID: 5200307920320225364, guid: c9dbf9772d76eb2409cd3a648aae63b5,
+        type: 3}
+      propertyPath: damage
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5574280747023649100, guid: c9dbf9772d76eb2409cd3a648aae63b5,
         type: 3}
       propertyPath: puffEffect
@@ -4711,6 +4716,11 @@ PrefabInstance:
     - target: {fileID: 3867483206547680504, guid: 4f5f1840be23f1049a17ec21810ca568,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465078603822013589, guid: 4f5f1840be23f1049a17ec21810ca568,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

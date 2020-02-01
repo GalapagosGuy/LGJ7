@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a0bb13c57f9c94bbdb9cb0d28d12e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 
-  damage: 0
+  enemyType: Enemy
+  damage: 15
   type: 6
   isBroken: 0
   isHeated: 0

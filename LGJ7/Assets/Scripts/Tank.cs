@@ -12,7 +12,7 @@ public class Tank : InteractableObject
     public override void Use(ItemSlot playersItemSlot)
     {
         //if player has ore in hands put it in container
-        if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Ore>())
+        if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Cup>())
         {
             Destroy(playersItemSlot.Item);
             playersItemSlot.RemoveItemFromSlot();
