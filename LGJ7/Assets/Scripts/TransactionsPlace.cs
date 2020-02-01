@@ -11,7 +11,11 @@ public class TransactionsPlace : InteractableObject
         if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Item>() 
             && playersItemSlot.Item.GetComponent<Item>().IsReady)
         {
-            gameManager.AddGeld(100);
+            if(playersItemSlot.Item.GetComponent<Item>().Type == ITEMTYPE.Sword)
+                gameManager.AddGeld(100);
+            else if(playersItemSlot.Item.GetComponent<Item>().Type == ITEMTYPE.Axe)
+                gameManager.AddGeld(200);
+
             Destroy(playersItemSlot.Item);
             playersItemSlot.RemoveItemFromSlot();
         }

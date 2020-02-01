@@ -29,7 +29,7 @@ public class Bucket : InteractableObject
     }
     public override void Use(ItemSlot playersItemSlot)
     {
-        if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Sword>() && playersItemSlot.Item.GetComponent<Sword>().IsForged)
+        if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Item>() && playersItemSlot.Item.GetComponent<Item>().IsForged)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);
             fillableCircle.transform.parent.gameObject.SetActive(true);
@@ -47,7 +47,7 @@ public class Bucket : InteractableObject
 
             AddWater();
         }
-        else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsChilled)
+        else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Item>() && itemSlot.Item.GetComponent<Item>().IsChilled)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
             fillableCircle.transform.parent.gameObject.SetActive(false);
@@ -59,7 +59,7 @@ public class Bucket : InteractableObject
     }
     void Update()
     {
-        if (itemSlot.Item != null && !itemSlot.Item.GetComponent<Sword>().IsChilled)
+        if (itemSlot.Item != null && !itemSlot.Item.GetComponent<Item>().IsChilled)
         {
             Chilling();
         }
@@ -74,7 +74,7 @@ public class Bucket : InteractableObject
         }
         else if(timeOfChilling <= time)
         {
-            itemSlot.Item.GetComponent<Sword>().Chill();
+            itemSlot.Item.GetComponent<Item>().Chill();
             itemSlot.Item.GetComponentInChildren<MeshRenderer>().material.color = Color.blue;
             time = 0;
         }
@@ -88,7 +88,7 @@ public class Bucket : InteractableObject
 
     public void DecreaseWaterLevel()
     {
-        if (itemSlot.Item != null && !itemSlot.Item.GetComponent<Sword>().IsChilled)
+        if (itemSlot.Item != null && !itemSlot.Item.GetComponent<Item>().IsChilled)
         {
             waterLevel--;
             waterLevelSlider.value = waterLevel / (float)maxWaterLevel;

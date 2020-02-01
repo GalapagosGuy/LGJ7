@@ -24,8 +24,8 @@ public class Anvil : InteractableObject
         {
             CheckMiniGameStatus();
         }
-        else if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Sword>() 
-            && playersItemSlot.Item.GetComponent<Sword>().IsHeated)
+        else if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Item>() 
+            && playersItemSlot.Item.GetComponent<Item>().IsHeated)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);
 
@@ -33,7 +33,7 @@ public class Anvil : InteractableObject
           
             playersItemSlot.RemoveItemFromSlot();
 
-            requiredOres = itemSlot.Item.GetComponent<Sword>().RequiredOres;
+            requiredOres = itemSlot.Item.GetComponent<Item>().RequiredOres;
 
             hits = requiredHits;
 
@@ -51,7 +51,7 @@ public class Anvil : InteractableObject
             if (requiredOres == 0)
                 StartMiniGame();
         }
-        else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsForged)
+        else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Item>() && itemSlot.Item.GetComponent<Item>().IsForged)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
             fillableCircle.transform.parent.gameObject.SetActive(false);
@@ -62,9 +62,9 @@ public class Anvil : InteractableObject
 
     private void Forge()
     {
-        itemSlot.Item.GetComponent<Sword>().Forge();
+        itemSlot.Item.GetComponent<Item>().Forge();
 
-        itemSlot.Item.GetComponent<Sword>().SetModelToRepaired();
+        itemSlot.Item.GetComponent<Item>().SetModelToRepaired();
     }
 
     [SerializeField]

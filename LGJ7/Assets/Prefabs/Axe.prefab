@@ -623,7 +623,7 @@ MonoBehaviour:
   brokenItems:
   - {fileID: 100000, guid: a3640e2f6be1d3f40a5a38d61889a598, type: 3}
   repairedItem: {fileID: 100000, guid: a3640e2f6be1d3f40a5a38d61889a598, type: 3}
-  fireParticles: {fileID: 0}
+  fireParticles: {fileID: 8298157785602425551}
 --- !u!1 &3636527520785397917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1109,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e04dea75bb0c7244391be733f5355ac4, type: 3}
+--- !u!1 &8298157785602425551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1053144852451064, guid: e04dea75bb0c7244391be733f5355ac4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8298805208355064887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8296895338948649389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4284814539271578, guid: e04dea75bb0c7244391be733f5355ac4,
