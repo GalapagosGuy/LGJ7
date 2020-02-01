@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ItemSlot), typeof(Animator))]
+[RequireComponent(typeof(ItemSlot))]
 public class PlayerController : MonoBehaviour
 {
     private InteractableObject interactableObject;
@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         itemSlot = GetComponent<ItemSlot>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void ActivateInteractableObject()
