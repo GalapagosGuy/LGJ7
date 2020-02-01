@@ -51,6 +51,7 @@ public class EnchantTable : InteractableObject
     private List<Image> imagesWithText = new List<Image>();
 
     private List<KeyCode> password = new List<KeyCode>();
+    private List<string> passwordString = new List<string>();
 
     private bool miniGameWorking = false;
 
@@ -64,6 +65,7 @@ public class EnchantTable : InteractableObject
     private void StartMiniGame(ItemSlot playersItemSlot)
     {
         password.Clear();
+        passwordString.Clear();
 
         minigameCanvas.SetActive(true);
 
@@ -89,14 +91,50 @@ public class EnchantTable : InteractableObject
         }
         else
         {
-
+            for (int i = 0; i < 4; i++)
+            {
+                switch (Random.Range(0, 3))
+                {
+                    case 0:
+                        passwordString.Add("Player2ActionL1");
+                        break;
+                    case 1:
+                        passwordString.Add("Player2ActionR1");
+                        break;
+                    case 2:
+                        passwordString.Add("ActionPlayer2");
+                        break;
+                }
+            }
         }
 
 
-        for(int i = 0; i < 4; i++)
+        if(password.Count != 0)
         {
-            imagesWithText[i].GetComponentInChildren<Text>().text = password[i].ToString();
+            for (int i = 0; i < 4; i++)
+            {
+                imagesWithText[i].GetComponentInChildren<Text>().text = password[i].ToString();
+            }
         }
+        else
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                switch (passwordString[i])
+                {
+                    case "Player2ActionL1":
+                        imagesWithText[i].GetComponentInChildren<Text>().text = "L1";
+                        break;
+                    case "Player2ActionR1":
+                        imagesWithText[i].GetComponentInChildren<Text>().text = "R1";
+                        break;
+                    case "ActionPlayer2":
+                        imagesWithText[i].GetComponentInChildren<Text>().text = "X";
+                        break;
+                }
+            }
+        }
+
 
         imagesWithText[0].GetComponent<Image>().color = Color.yellow;
 
@@ -110,7 +148,7 @@ public class EnchantTable : InteractableObject
         {
             Debug.Log("MiniGame working");
 
-            if(Input.anyKeyDown)
+            if(Input.anyKeyDown && password.Count != 0 && playersItemSlotCopy.transform.root.gameObject.GetComponent<PlayerController>().InteractableObject == this)
             {
                 if (Input.GetKeyDown(password[activeSlot]))
                 {
@@ -142,6 +180,43 @@ public class EnchantTable : InteractableObject
                     StartMiniGame(playersItemSlotCopy);
                 }
             }
+
+            if(playersItemSlotCopy.transform.root.gameObject.GetComponent<PlayerController>().InteractableObject == this)
+            {
+                if((Input.GetButtonDown("Player2ActionL1") && passwordString[activeSlot] == "Player2ActionL1")
+                    || (Input.GetButtonDown("Player2ActionR1") && passwordString[activeSlot] == "Player2ActionR1")
+                    || (Input.GetButtonDown("ActionPlayer2") && passwordString[activeSlot] == "ActionPlayer2"))
+                {
+                    Debug.Log("CorrectKeyPressed");
+
+                    activeSlot++;
+
+
+                    if (activeSlot >= 4)
+                    {
+                        Enchant();
+                        minigameCanvas.SetActive(false);
+                        miniGameWorking = false;
+
+                        imagesWithText[activeSlot - 1].GetComponent<Image>().color = Color.white;
+                    }
+                    else
+                    {
+                        imagesWithText[activeSlot - 1].GetComponent<Image>().color = Color.white;
+                        imagesWithText[activeSlot].GetComponent<Image>().color = Color.yellow;
+                    }
+                }
+                else if (Input.GetButtonDown("Player2ActionL1") || Input.GetButtonDown("Player2ActionR1") || Input.GetButtonDown("ActionPlayer2"))
+                {
+                    Debug.Log("Password Incorrect - reset!");
+
+                    imagesWithText[activeSlot].GetComponent<Image>().color = Color.white;
+
+                    StartMiniGame(playersItemSlotCopy);
+                }
+            }
+
         }
+        
     }
 }

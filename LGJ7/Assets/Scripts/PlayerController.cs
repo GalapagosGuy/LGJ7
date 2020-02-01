@@ -58,7 +58,8 @@ public class PlayerController : Character
 
     private int attackNumber = 0;
 
-    
+    public InteractableObject InteractableObject { get => interactableObject;  }
+
     public void Attack()
     {
         if(GetComponentInChildren<Weapon>())

@@ -609,13 +609,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f0f102f1b545f449e11de5e527d403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 
-  damage: 0
+  enemyType: Enemy
+  damage: 35
   type: 7
-  isBroken: 0
+  isBroken: 1
   isHeated: 0
   isForged: 0
-  isChilled: 1
+  isChilled: 0
   isReady: 0
   isWoodEnchanted: 0
   requiredOres: 2
