@@ -7,7 +7,10 @@ public class Character : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
 
-    private int health;
+    [SerializeField]
+    private GameObject puffEffect;
+
+    protected int health;
 
     protected virtual void Awake()
     {
@@ -24,6 +27,9 @@ public class Character : MonoBehaviour
     public virtual void CheckDeathCondition()
     {
         if (health <= 0)
-            Destroy(this.gameObject);
+        {
+            Destroy(Instantiate(puffEffect, transform.position, transform.rotation), 2f);
+            Destroy(this.transform.root.gameObject);
+        }
     }
 }

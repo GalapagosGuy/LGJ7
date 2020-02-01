@@ -25,6 +25,7 @@ public class NewOrder : MonoBehaviour
         {
             GameObject order = Instantiate(newOrder);
             order.transform.parent = itemSlot.transform;
+            //order.transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);
             order.transform.Rotate(0, -90, 0);
             itemSlot.AddItemToSlot(order);
             time = 0;

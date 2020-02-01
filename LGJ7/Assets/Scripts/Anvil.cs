@@ -15,6 +15,9 @@ public class Anvil : InteractableObject
 
     private Slider itemSlider;
 
+    [SerializeField]
+    private ParticleSystem tinyExplosion;
+
     public override void Use(ItemSlot playersItemSlot)
     {
         if(miniGameActive)
@@ -25,6 +28,8 @@ public class Anvil : InteractableObject
             && playersItemSlot.Item.GetComponent<Sword>().IsHeated)
         {
             itemSlot.AddItemToSlot(playersItemSlot.Item);
+
+            itemSlot.Item.transform.localScale = new Vector3(1, 1, 1);
           
             playersItemSlot.RemoveItemFromSlot();
 
@@ -57,6 +62,8 @@ public class Anvil : InteractableObject
     private void Forge()
     {
         itemSlot.Item.GetComponent<Sword>().Forge();
+
+        itemSlot.Item.GetComponent<Sword>().SetModelToRepaired();
     }
 
     [SerializeField]
@@ -109,6 +116,8 @@ public class Anvil : InteractableObject
                 miniGameActive = false;
                 Forge();
             }
+
+            tinyExplosion.Play();
         }
         else
             hits = requiredHits;

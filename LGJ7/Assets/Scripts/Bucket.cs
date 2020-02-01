@@ -16,6 +16,9 @@ public class Bucket : InteractableObject
     [SerializeField]
     private Slider waterLevelSlider;
 
+    [SerializeField]
+    private ParticleSystem particles;
+
 
     private void Start()
     {
@@ -34,6 +37,8 @@ public class Bucket : InteractableObject
             playersItemSlot.RemoveItemFromSlot();
 
             itemSlot.Item.transform.GetChild(0).transform.Rotate(0, 180, 0);
+
+            particles.Play();
         }
         else if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Cup>())
         {
@@ -47,6 +52,8 @@ public class Bucket : InteractableObject
             playersItemSlot.AddItemToSlot(itemSlot.Item);
             itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(false);
             itemSlot.RemoveItemFromSlot();
+
+            particles.Stop();
         }
 
     }

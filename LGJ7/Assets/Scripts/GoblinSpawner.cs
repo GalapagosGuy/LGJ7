@@ -15,6 +15,8 @@ public class GoblinSpawner : MonoBehaviour
 
     private int playerIndex = 0;
 
+    private int totalSpawnedGoblins = 0;
+
     private void Start()
     {
         InvokeRepeating("SpawnWave", 60, 60);
@@ -34,6 +36,7 @@ public class GoblinSpawner : MonoBehaviour
         goblin.GetComponent<GoblinAI>().target = playerReferences[playerIndex];
 
         spawnedGoblins++;
+        totalSpawnedGoblins++;
 
         playerIndex++;
 

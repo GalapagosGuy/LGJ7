@@ -68,7 +68,6 @@ public class Furnace : InteractableObject
         else if (itemSlot.Item.GetComponent<Sword>().TimeToHeat <= time)
         {
             itemSlot.Item.GetComponent<Sword>().Preheat();
-            itemSlot.Item.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
             time = 0;
         }
     }

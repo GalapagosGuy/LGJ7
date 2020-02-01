@@ -1172,6 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  puffEffect: {fileID: 1248365930086534, guid: 8a7eff82d5211844591f2c46f6a7a82e, type: 3}
   weaponCollider: {fileID: 756654479443031705}
   weapon: {fileID: 7285283458636156027}
 --- !u!114 &7116964926366221377
