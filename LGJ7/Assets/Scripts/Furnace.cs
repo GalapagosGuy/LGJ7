@@ -36,13 +36,14 @@ public class Furnace : InteractableObject
             itemSlot.AddItemToSlot(playersItemSlot.Item);
 
             playersItemSlot.RemoveItemFromSlot();
-            itemSlot.Item.GetComponentInChildren<Slider>().value = 0;
+            itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(true);
+            itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = 0;
 
         }
         else if (!playersItemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsHeated)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
-
+            itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(false);
             itemSlot.RemoveItemFromSlot();
         }
 
@@ -61,8 +62,8 @@ public class Furnace : InteractableObject
         if(itemSlot.Item.GetComponent<Sword>().TimeToHeat > time && heatLevel >= minimumHeat)
         {
             time += Time.deltaTime;
-            
-            itemSlot.Item.GetComponentInChildren<Slider>().value = time / itemSlot.Item.GetComponent<Sword>().TimeToHeat;
+
+            itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = time / itemSlot.Item.GetComponent<Sword>().TimeToHeat;
         }
         else if (itemSlot.Item.GetComponent<Sword>().TimeToHeat <= time)
         {
