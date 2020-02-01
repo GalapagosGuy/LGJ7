@@ -601,7 +601,14 @@ MonoBehaviour:
   isForged: 0
   isChilled: 0
   isReady: 0
+  isWoodEnchanted: 0
   requiredOres: 3
+  requiredWoods: 1
+  brokenItems:
+  - {fileID: 5978920506846605489, guid: d90e6d2bcaef5af4491cc4b727c204c1, type: 3}
+  - {fileID: 6982724981896985768, guid: a94a69eac59caf74bac4b6d3329c0c62, type: 3}
+  repairedItem: {fileID: 7972002271680023868, guid: 02a2310d879abc3438bf04cd134c4ef4,
+    type: 3}
   brokenSwords:
   - {fileID: 5978920506846605489, guid: d90e6d2bcaef5af4491cc4b727c204c1, type: 3}
   - {fileID: 6982724981896985768, guid: a94a69eac59caf74bac4b6d3329c0c62, type: 3}

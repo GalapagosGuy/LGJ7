@@ -40,6 +40,10 @@ public class Axe : Item
         {
             nextRecipe = "Go to the bucket and chill your axe.";
         }
+        if (isChilled)
+        {
+            nextRecipe = "Go to workstation, add " + RequiredWoods + " woods and connect them to axe.";
+        }
         if (isReady)
         {
             nextRecipe = "Give the perfect axe to the customer.";
