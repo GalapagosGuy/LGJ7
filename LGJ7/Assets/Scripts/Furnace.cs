@@ -23,7 +23,7 @@ public class Furnace : InteractableObject
     private void Start()
     {
         InvokeRepeating("DecreaseHeatLevel", 0, 1);
-        GetComponentInChildren<Slider>().value = 0;
+ 
     }
 
 
@@ -40,7 +40,7 @@ public class Furnace : InteractableObject
             itemSlot.Item.GetComponentInChildren<ItemClock>().fillImage.fillAmount = 0;
 
         }
-        else if (!playersItemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsHeated)
+        else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsHeated)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
             itemSlot.Item.GetComponentInChildren<ItemClock>().transform.GetChild(0).gameObject.SetActive(false);

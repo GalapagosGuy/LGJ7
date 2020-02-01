@@ -19,6 +19,7 @@ public class ItemSlot : MonoBehaviour
             this.item = item;
 
             item.transform.position = itemSlot.transform.position;
+            item.transform.rotation = itemSlot.transform.rotation;
             item.transform.parent = itemSlot.transform;
         }
         else

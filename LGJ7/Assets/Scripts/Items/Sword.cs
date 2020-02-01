@@ -16,7 +16,7 @@ public class Sword : Item
     private bool isReady = false;
     [SerializeField]
     private int requiredOres = 2;
-    private int timeToHeat = 5;
+    private int timeToHeat = 7;
 
     public bool IsBroken { get => isBroken; }
     public bool IsHeated { get => isHeated; }

@@ -5,13 +5,10 @@ using UnityEngine;
 public class LookingAtCamera : MonoBehaviour
 {
     [SerializeField] Camera mycamera;
-    private Quaternion iniRot;
-    void Start()
+    
+    
+    void Update()
     {
-        iniRot = transform.rotation;
-    }
-    void LateUpdate()
-    {
-        transform.rotation = iniRot;
+        transform.LookAt(transform.position + mycamera.transform.rotation * Vector3.back, mycamera.transform.rotation * Vector3.up);
     }
 }
