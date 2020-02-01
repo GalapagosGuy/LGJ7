@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : Item
+public class Axe : Item
 {
     [SerializeField]
     private bool isBroken = true;
@@ -13,16 +13,18 @@ public class Sword : Item
     [SerializeField]
     private bool isChilled = false;
     [SerializeField]
+    private bool isWoodEnchanted = false;
+    [SerializeField]
     private bool isReady = false;
     [SerializeField]
-    private int requiredOres = 2;
-    private int timeToHeat = 7;
+    private int requiredOres = 3;
+    private int timeToHeat = 10;
 
     [SerializeField]
-    private List<GameObject> brokenSwords = new List<GameObject>();
+    private List<GameObject> brokenAxes = new List<GameObject>();
 
     [SerializeField]
-    private GameObject repairedSword;
+    private GameObject repairedAxe;
 
     public bool IsBroken { get => isBroken; }
     public bool IsHeated { get => isHeated; }
@@ -31,24 +33,25 @@ public class Sword : Item
     public bool IsReady { get => isReady; }
     public int RequiredOres { get => requiredOres; }
     public int TimeToHeat { get => timeToHeat; }
+    public bool IsWoodEnchanted { get => isWoodEnchanted; set => isWoodEnchanted = value; }
 
     [SerializeField]
     private GameObject fireParticles;
 
     private void Start()
     {
-        GameObject brokenSword = Instantiate(brokenSwords[Random.Range(0, brokenSwords.Count)], transform.position, transform.rotation);
+        GameObject brokenSword = Instantiate(brokenAxes[Random.Range(0, brokenAxes.Count)], transform.position, transform.rotation);
 
         brokenSword.transform.parent = this.transform.GetChild(0);
 
-        brokenSword.transform.localScale = new Vector3(1,1,1);
+        brokenSword.transform.localScale = new Vector3(1, 1, 1);
     }
 
     public void SetModelToRepaired()
     {
         Destroy(this.transform.GetChild(0).GetChild(0).gameObject);
 
-        GameObject repairedSwordInst = Instantiate(repairedSword, transform.position, transform.rotation);
+        GameObject repairedSwordInst = Instantiate(repairedAxe, transform.position, transform.rotation);
 
         repairedSwordInst.transform.parent = this.transform.GetChild(0);
 
@@ -79,6 +82,16 @@ public class Sword : Item
     {
         isForged = false;
         isChilled = true;
+
+        GetComponentInChildren<MeshRenderer>().material.color = Color.cyan;
+
+        damage += 10;
+    }
+
+
+    public void Enchant()
+    {
+        isChilled = false;
 
         GetComponentInChildren<MeshRenderer>().material.color = Color.cyan;
 

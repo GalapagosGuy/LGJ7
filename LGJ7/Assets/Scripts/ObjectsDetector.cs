@@ -11,11 +11,28 @@ public class ObjectsDetector : MonoBehaviour
         playerController = GetComponentInParent<PlayerController>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<InteractableObject>())
         {
             Debug.Log("I SEE HIM!");
+            playerController?.SetInteractableObject(other.GetComponent<InteractableObject>());
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<InteractableObject>())
+        {
+            Debug.Log("WHERE IS IT?!?!!?");
+            playerController?.SetInteractableObject(null);
+        }
+    }*/
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<InteractableObject>())
+        {
             playerController?.SetInteractableObject(other.GetComponent<InteractableObject>());
         }
     }
