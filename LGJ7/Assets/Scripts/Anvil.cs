@@ -8,6 +8,13 @@ public class Anvil : InteractableObject
     [SerializeField]
     private int requiredOres = 0;
 
+    [SerializeField]
+    private int requiredHits = 5;
+
+    private int hits = 0;
+
+    private Slider itemSlider;
+
     public override void Use(ItemSlot playersItemSlot)
     {
         if(miniGameActive)
@@ -22,6 +29,12 @@ public class Anvil : InteractableObject
             playersItemSlot.RemoveItemFromSlot();
 
             requiredOres = itemSlot.Item.GetComponent<Sword>().RequiredOres;
+
+            hits = requiredHits;
+
+            itemSlider = itemSlot.Item.GetComponentInChildren<Slider>();
+
+            itemSlider.value = 0;
         }
         else if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Ore>())
         {
@@ -85,9 +98,22 @@ public class Anvil : InteractableObject
     private void CheckMiniGameStatus()
     {
         if (pointer.isInCorrectArea)
-            SetRandomCorrectArea();
+        {
+            hits--;        
+
+            if (hits <= 0)
+            {
+                miniGameSlider.gameObject.SetActive(false);
+                miniGameActive = false;
+                Forge();
+            }
+        }
         else
-            Debug.Log("XD");
+            hits = requiredHits;
+
+        SetRandomCorrectArea();
+
+        itemSlider.value = (5 - hits) / (float)requiredHits;
     }
 
     private void Update()
