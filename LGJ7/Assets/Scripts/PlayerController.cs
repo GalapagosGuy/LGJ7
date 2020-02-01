@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ItemSlot))]
+[RequireComponent(typeof(ItemSlot), typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     private InteractableObject interactableObject;
     private ItemSlot itemSlot;
 
+    private Animator animator;
+
     private void Awake()
     {
         itemSlot = GetComponent<ItemSlot>();
+        animator = GetComponent<Animator>();
     }
 
     public void ActivateInteractableObject()
@@ -24,5 +27,15 @@ public class PlayerController : MonoBehaviour
     public void SetInteractableObject(InteractableObject obj)
     {
         interactableObject = obj;
+    }
+
+    private int attackNumber = 0;
+
+    public void Attack()
+    {
+        animator.SetInteger("attackNumber", attackNumber % 2);
+        animator.SetTrigger("attackTrigger");
+
+        attackNumber++;
     }
 }

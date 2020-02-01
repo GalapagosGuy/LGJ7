@@ -46,7 +46,7 @@ public class Anvil : InteractableObject
             if (requiredOres == 0)
                 StartMiniGame();
         }
-        else if (!playersItemSlot.Item && itemSlot.Item.GetComponent<Sword>().IsForged)
+        else if (!playersItemSlot.Item && itemSlot.Item && itemSlot.Item.GetComponent<Sword>() && itemSlot.Item.GetComponent<Sword>().IsForged)
         {
             playersItemSlot.AddItemToSlot(itemSlot.Item);
 
