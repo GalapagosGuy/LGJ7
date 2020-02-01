@@ -28,7 +28,23 @@ public class Axe : Item
     }*/
     public override string GetNextRecipe()
     {
-        return "Same as sword + workstation with 2 woods needed";
+        if (isBroken)
+        {
+            nextRecipe = "Fire up your axe in the furnace.";
+        }
+        if (isHeated)
+        {
+            nextRecipe = "Go to the anvil, add " + requiredOres + " ores and hammer the axe.";
+        }
+        if (isForged)
+        {
+            nextRecipe = "Go to the bucket and chill your axe.";
+        }
+        if (isReady)
+        {
+            nextRecipe = "Give the perfect axe to the customer.";
+        }
+        return nextRecipe;
     }
     public override void Preheat()
     {
