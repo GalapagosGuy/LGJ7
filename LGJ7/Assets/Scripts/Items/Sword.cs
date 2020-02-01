@@ -28,19 +28,19 @@ public class Sword : Item
     {
         if (isBroken)
         {
-            nextRecipe = "Fire up your item in the furnace";
+            nextRecipe = "Preheat your sword in the furnace.";
         }
         if (isHeated)
         {
-            nextRecipe = "Go to the anvil, add " + requiredOres + "ores and hammer the item";
+            nextRecipe = "Go to the anvil, add " + requiredOres + " ores and hammer the sword.";
         }
         if (isForged)
         {
-            nextRecipe = "Go to the bucket and chill your item";
+            nextRecipe = "Go to the bucket and chill your sword.";
         }
         if (isReady)
         {
-            nextRecipe = "Give the item to the customer";
+            nextRecipe = "Give the freshed sword to the customer.";
         }
         return nextRecipe;
     }

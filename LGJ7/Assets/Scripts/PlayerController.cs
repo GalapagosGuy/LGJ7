@@ -45,7 +45,6 @@ public class PlayerController : Character
 
     public void ActivateInteractableObject()
     {
-        Debug.Log("Item use");
 
         if(interactableObject)
             interactableObject.Use(itemSlot);
