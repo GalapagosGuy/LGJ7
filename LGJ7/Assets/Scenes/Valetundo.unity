@@ -206,13 +206,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14132237}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9096901, y: 2.6455166, z: 1.2859}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029653306}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00050461723}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2040573493}
-  m_Father: {fileID: 1349882688}
-  m_RootOrder: 5
+  m_Father: {fileID: 1720091214}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1686,6 +1686,7 @@ RectTransform:
   - {fileID: 1280489352}
   - {fileID: 115679997}
   - {fileID: 1635319336}
+  - {fileID: 1279488693}
   m_Father: {fileID: 1349882688}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3817,7 +3818,7 @@ Transform:
   m_LocalScale: {x: 4, y: 10, z: 3.214}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &925983275
 PrefabInstance:
@@ -5788,11 +5789,11 @@ RectTransform:
   m_GameObject: {fileID: 1279488692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9096901, y: 2.6455166, z: 1.2859}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 217107133}
-  m_Father: {fileID: 1349882688}
-  m_RootOrder: 4
+  m_Father: {fileID: 285098635}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6626,8 +6627,6 @@ RectTransform:
   - {fileID: 1495494190}
   - {fileID: 1426247187}
   - {fileID: 1720091214}
-  - {fileID: 1279488693}
-  - {fileID: 14132238}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8763,6 +8762,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dayTime: 300
   fillImage: {fileID: 804532159}
+  endScreen: {fileID: 0}
+  toTurnOff:
+  - {fileID: 285098634}
+  - {fileID: 1720091213}
+  - {fileID: 1495494189}
 --- !u!114 &1698329975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8913,6 +8917,7 @@ RectTransform:
   - {fileID: 462759806}
   - {fileID: 1141747978}
   - {fileID: 1593154768}
+  - {fileID: 14132238}
   m_Father: {fileID: 1349882688}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}

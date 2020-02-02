@@ -10,6 +10,12 @@ public class Clock : MonoBehaviour
     [SerializeField]
     private Image fillImage;
 
+    [SerializeField]
+    private GameObject endScreen;
+
+    [SerializeField]
+    List<GameObject> toTurnOff = new List<GameObject>();
+
     private void Start()
     {
         fillImage.fillAmount = 1f;
@@ -35,6 +41,15 @@ public class Clock : MonoBehaviour
             yield return null;
         }
 
+        foreach(GameObject obj in toTurnOff)
+        {
+            obj.SetActive(false);
+        }
 
+        Time.timeScale = 0;
+
+        endScreen.SetActive(true);
+
+        this.gameObject.SetActive(false);
     }
 }
