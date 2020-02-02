@@ -9,21 +9,23 @@ public class Character : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
 
+    public int GetMaxHealth { get => maxHealth; }
+   
     [SerializeField]
-    private GameObject puffEffect;
+    protected GameObject puffEffect;
 
     [SerializeField]
     private Slider hpBarSlider;
 
     protected int health;
 
-    private AudioSource audioSource;
+    protected AudioSource audioSource;
 
     [SerializeField]
     private List<AudioClip> hitSound = new List<AudioClip>();
 
     [SerializeField]
-    private AudioClip deathSound;
+    protected AudioClip deathSound;
 
     protected virtual void Awake()
     {

@@ -68,7 +68,7 @@ public class GoblinSpawner : MonoBehaviour
 
     public bool AreAllGoblinsDefeated()
     {
-        if (defeatedGoblins == totalSpawnedGoblins)
+        if (defeatedGoblins == totalSpawnedGoblins && totalSpawnedGoblins != 0)
             return true;
         else
             return false;

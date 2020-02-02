@@ -47,6 +47,10 @@ public class PlayerController : Character
         {
             recipeText.transform.parent.gameObject.SetActive(false);
         }
+        if(this.transform.position.y > 0.05)
+        {
+            this.transform.position = new Vector3(transform.position.x, 0.04f, transform.position.z);
+        }
     }
 
     public void ActivateInteractableObject()
@@ -64,6 +68,19 @@ public class PlayerController : Character
     private int attackNumber = 0;
 
     public InteractableObject InteractableObject { get => interactableObject;  }
+
+    public override void CheckDeathCondition()
+    {
+        if (health <= 0)
+        {
+            audioSource.clip = deathSound;
+            audioSource.Play();
+
+
+            Destroy(Instantiate(puffEffect, transform.position, transform.rotation), 2f);
+            this.gameObject.SetActive(false);
+        }
+    }
 
     public void Attack()
     {
@@ -86,4 +103,6 @@ public class PlayerController : Character
         audiosourcePlayer.clip = takingObjectSound;
         audiosourcePlayer.Play();
     }
+
+  
 }
