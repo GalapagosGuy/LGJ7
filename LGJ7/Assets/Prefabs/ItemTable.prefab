@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13d58104db25bc4194c0076568e7461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fillableCircle: {fileID: 0}
 --- !u!54 &2367382454954498674
 Rigidbody:
   m_ObjectHideFlags: 0

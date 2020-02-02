@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Valetundo.unity
+    guid: 935a5f8637d341b49896aaf9b5660c4c
   m_configObjects: {}
