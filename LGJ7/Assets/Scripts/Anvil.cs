@@ -62,9 +62,9 @@ public class Anvil : InteractableObject
 
     private void Forge()
     {
-        itemSlot.Item.GetComponent<Item>().Forge();
-
         itemSlot.Item.GetComponent<Item>().SetModelToRepaired();
+
+        itemSlot.Item.GetComponent<Item>().Forge();
     }
 
     [SerializeField]

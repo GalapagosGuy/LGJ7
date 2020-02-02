@@ -78,6 +78,12 @@ public abstract class Item : Weapon
         repairedSwordInst.transform.parent = this.transform.GetChild(0);
 
         repairedSwordInst.transform.localScale = new Vector3(1, 1, 1);
+
+        repairedSwordInst.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
+
+        GetComponentInChildren<MeshRenderer>().material.color = Color.red;
+
+        Debug.Log(GetComponentInChildren<MeshRenderer>().material.color);
     }
 
     public virtual void Preheat()
@@ -95,7 +101,8 @@ public abstract class Item : Weapon
         //fireParticles.SetActive(false);
         isHeated = false;
         isForged = true;
-        GetComponentInChildren<MeshRenderer>().material.color = new Color(0.4f, 0, 0);
+        //GetComponentInChildren<MeshRenderer>().material.color = new Color(0.4f, 0, 0);
+        GetComponentInChildren<MeshRenderer>().material.color = Color.red;
 
         damage += 10;
     }
