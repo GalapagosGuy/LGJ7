@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class GoblinSpawner : MonoBehaviour
 {
+    public static GoblinSpawner instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+
     [SerializeField]
     private GameObject goblinPrefab;
 
@@ -19,6 +29,8 @@ public class GoblinSpawner : MonoBehaviour
 
     [SerializeField]
     private AudioSource hornSound;
+
+    private int defeatedGoblins = 0;
 
     public void StartTimeToWave()
     {
@@ -52,5 +64,24 @@ public class GoblinSpawner : MonoBehaviour
 
         if (spawnedGoblins < numberOfGoblinsToSpawn)
             StartCoroutine("SpawnWaveOfGoblins", spawnedGoblins);
+    }
+
+    public bool AreAllGoblinsDefeated()
+    {
+        if (defeatedGoblins == totalSpawnedGoblins)
+            return true;
+        else
+            return false;
+    }
+
+    [SerializeField]
+    private DoorsScript doors;
+
+    public void GoblinDefeated()
+    {
+        defeatedGoblins++;
+
+        if (AreAllGoblinsDefeated())
+            doors.CloseTheDoor();
     }
 }

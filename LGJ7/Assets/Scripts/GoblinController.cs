@@ -62,4 +62,12 @@ public class GoblinController : Character
     {
         weaponCollider.enabled = false;
     }
+
+    public override void CheckDeathCondition()
+    {
+        if (health <= 0)
+            GoblinSpawner.instance.GoblinDefeated();
+
+        base.CheckDeathCondition();
+    }
 }
