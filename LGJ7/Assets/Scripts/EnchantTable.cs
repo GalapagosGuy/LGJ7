@@ -11,6 +11,9 @@ public class EnchantTable : InteractableObject
     [SerializeField]
     private ParticleSystem tinyExplosion;
 
+    [SerializeField]
+    private ParticleSystem splash;
+
     public override void Use(ItemSlot playersItemSlot)
     {
         if (playersItemSlot.Item && !itemSlot.Item && playersItemSlot.Item.GetComponent<Item>()
@@ -161,6 +164,11 @@ public class EnchantTable : InteractableObject
                     Debug.Log("CorrectKeyPressed");
 
                     activeSlot++;
+
+                    splash.Play();
+
+                    audioSource.clip = audioClips[Random.Range(0, audioClips.Count)];
+                    audioSource.Play();
 
 
                     if (activeSlot >= 4)
