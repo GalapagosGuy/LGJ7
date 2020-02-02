@@ -13,6 +13,9 @@ public class PlayerController : Character
     [SerializeField]
     private Text recipeText;
 
+    [SerializeField]
+    private GameObject HUD;
+
     private bool firstTime = true;
     private ItemSlot itemSlot;
 
@@ -47,7 +50,7 @@ public class PlayerController : Character
         {
             recipeText.transform.parent.gameObject.SetActive(false);
         }
-        if(this.transform.position.y > 0.05)
+        if(this.transform.position.y > 0.041)
         {
             this.transform.position = new Vector3(transform.position.x, 0.04f, transform.position.z);
         }
@@ -78,6 +81,7 @@ public class PlayerController : Character
 
 
             Destroy(Instantiate(puffEffect, transform.position, transform.rotation), 2f);
+            //HUD.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
         }
     }

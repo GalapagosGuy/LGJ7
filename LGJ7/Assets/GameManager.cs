@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private Text geldEnd;
 
     [SerializeField]
+    private GameObject playmenu;
+    [SerializeField]
     private GameObject player1;
 
     [SerializeField]
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour
                 RessurectPlayer(player2, player2Hud);
             }
         }
-        if (player1.activeSelf == false && player2.activeSelf == false)
+        if (player1.activeSelf == false && player2.activeSelf == false && playmenu.activeSelf == true)
         {
 
             RessurectPlayer(player1, player1Hud);
