@@ -39,6 +39,9 @@ public class Bucket : InteractableObject
             itemSlot.Item.transform.GetChild(0).transform.Rotate(0, 180, 0);
 
             particles.Play();
+
+            audioSource.clip = audioClips[0];
+            audioSource.Play();
         }
         else if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Cup>())
         {

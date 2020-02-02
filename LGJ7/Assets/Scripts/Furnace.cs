@@ -23,7 +23,8 @@ public class Furnace : InteractableObject
     private void Start()
     {
         InvokeRepeating("DecreaseHeatLevel", 0, 1);
- 
+
+        audioSource.clip = audioClips[0];
     }
 
 
@@ -84,6 +85,9 @@ public class Furnace : InteractableObject
             sliderBackground.color = Color.red;
         if (heatLevel > maxHeatLevel)
             heatLevel = maxHeatLevel;
+
+        if (!audioSource.isPlaying)
+            audioSource.Play();
     }
 
     public void DecreaseHeatLevel()
@@ -93,7 +97,12 @@ public class Furnace : InteractableObject
         if (heatLevel < minimumHeat)
             sliderBackground.color = Color.blue;
         if (heatLevel < 0)
+        {
+            if (audioSource.isPlaying)
+                audioSource.Stop();
+
             heatLevel = 0;
+        }
     }
     
 }

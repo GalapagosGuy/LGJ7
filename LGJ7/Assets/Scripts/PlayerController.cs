@@ -18,6 +18,12 @@ public class PlayerController : Character
 
     private Animator animator;
 
+    [SerializeField]
+    private AudioSource audiosourcePlayer;
+
+    [SerializeField]
+    private AudioClip takingObjectSound;
+
     protected override void Awake()
     {
         base.Awake();
@@ -73,5 +79,11 @@ public class PlayerController : Character
     private void RegenerateHealth()
     {
         AddHealth(healthRegen);
+    }
+
+    public void PlayTakingItemSound()
+    {
+        audiosourcePlayer.clip = takingObjectSound;
+        audiosourcePlayer.Play();
     }
 }

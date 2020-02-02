@@ -15,5 +15,7 @@ public class ForgeBag : InteractableObject
     public override void Use(ItemSlot playersItemSlot)
     {
         furnance?.PreheatFurnace();
+        audioSource.clip = audioClips[0];
+        audioSource.Play();
     }
 }

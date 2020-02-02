@@ -16,4 +16,20 @@ public class PlayerAnimLocks : MonoBehaviour
     {
         controller?.UnlockAnimActions();
     }
+
+    [SerializeField]
+    private AudioSource footSound;
+
+    [SerializeField]
+    private List<AudioClip> footSteps = new List<AudioClip>();
+
+    public void PlayStepSound()
+    {
+        //if (!footSound.isPlaying)
+        //{
+            footSound.clip = footSteps[Random.Range(0, footSteps.Count)];
+            footSound.Play();
+
+        //}
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class Character : MonoBehaviour
 {
     [SerializeField]
@@ -16,14 +17,30 @@ public class Character : MonoBehaviour
 
     protected int health;
 
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private List<AudioClip> hitSound = new List<AudioClip>();
+
+    [SerializeField]
+    private AudioClip deathSound;
+
     protected virtual void Awake()
     {
         health = maxHealth;
         hpBarSlider.value = health / (float)maxHealth;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void GetHit(int damage)
     {
+        if(!audioSource.isPlaying)
+        {
+            audioSource.clip = hitSound[Random.Range(0, hitSound.Count)];
+            audioSource.Play();
+        }
+
         health -= damage;
         hpBarSlider.value = health / (float)maxHealth;
         CheckDeathCondition();
@@ -42,6 +59,10 @@ public class Character : MonoBehaviour
     {
         if (health <= 0)
         {
+            audioSource.clip = deathSound;
+            audioSource.Play();
+
+
             Destroy(Instantiate(puffEffect, transform.position, transform.rotation), 2f);
             Destroy(this.transform.root.gameObject);
         }

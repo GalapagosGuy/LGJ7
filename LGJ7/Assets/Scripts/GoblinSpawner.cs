@@ -17,7 +17,10 @@ public class GoblinSpawner : MonoBehaviour
 
     private int totalSpawnedGoblins = 0;
 
-    private void Start()
+    [SerializeField]
+    private AudioSource hornSound;
+
+    public void StartTimeToWave()
     {
         InvokeRepeating("SpawnWave", 60, 60);
     }
@@ -27,6 +30,8 @@ public class GoblinSpawner : MonoBehaviour
         playerIndex = 0;
         numberOfGoblinsToSpawn = 10;
         StartCoroutine("SpawnWaveOfGoblins", 0);
+
+        hornSound.Play();
     }
 
     public IEnumerator SpawnWaveOfGoblins(int spawnedGoblins)

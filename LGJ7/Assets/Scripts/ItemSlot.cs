@@ -21,6 +21,8 @@ public class ItemSlot : MonoBehaviour
             item.transform.position = itemSlot.transform.position;
             item.transform.rotation = itemSlot.transform.rotation;
             item.transform.parent = itemSlot.transform;
+
+            this.transform.root.GetComponent<PlayerController>()?.PlayTakingItemSound();
         }
         else
             Debug.Log("Player's slot is not empty!");

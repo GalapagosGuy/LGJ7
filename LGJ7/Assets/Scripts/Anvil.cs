@@ -119,6 +119,8 @@ public class Anvil : InteractableObject
             }
 
             tinyExplosion.Play();
+            audioSource.clip = audioClips[Random.Range(0, audioClips.Count)];
+            audioSource.Play();
         }
         else
             hits = requiredHits;

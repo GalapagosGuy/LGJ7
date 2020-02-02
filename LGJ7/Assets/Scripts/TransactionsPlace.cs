@@ -11,6 +11,9 @@ public class TransactionsPlace : InteractableObject
         if (playersItemSlot.Item && playersItemSlot.Item.GetComponent<Item>() 
             && playersItemSlot.Item.GetComponent<Item>().IsReady)
         {
+            audioSource.clip = audioClips[0];
+            audioSource.Play();
+
             if(playersItemSlot.Item.GetComponent<Item>().Type == ITEMTYPE.Sword)
                 gameManager.AddGeld(100);
             else if(playersItemSlot.Item.GetComponent<Item>().Type == ITEMTYPE.Axe)
