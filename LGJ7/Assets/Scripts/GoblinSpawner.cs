@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GoblinSpawner : MonoBehaviour
 {
@@ -12,7 +13,11 @@ public class GoblinSpawner : MonoBehaviour
             instance = this;
         else
             Destroy(this);
+
+        StartTimeToWave();
     }
+    [SerializeField]
+    private Image fillImage;
 
     [SerializeField]
     private GameObject goblinPrefab;
@@ -39,6 +44,7 @@ public class GoblinSpawner : MonoBehaviour
 
     public void SpawnWave()
     {
+        fillImage.color = new Color(154.0f / 255.0f, 17 / 255.0f, 0, 255.0f);
         playerIndex = 0;
         numberOfGoblinsToSpawn = 10;
         StartCoroutine("SpawnWaveOfGoblins", 0);
@@ -83,5 +89,7 @@ public class GoblinSpawner : MonoBehaviour
 
         if (AreAllGoblinsDefeated())
             doors.CloseTheDoor();
+        fillImage.color = new Color(58.0f / 255.0f, 125.0f / 255.0f, 51.0f / 255.0f, 255.0f);
+
     }
 }

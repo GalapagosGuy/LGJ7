@@ -11,8 +11,14 @@ public class ExitApp : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneName);
     }
 
 }

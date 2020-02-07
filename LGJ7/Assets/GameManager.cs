@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
                 RessurectPlayer(player2, player2Hud);
             }
         }
-        if (player1.activeSelf == false && player2.activeSelf == false && playmenu.activeSelf == true)
+        if (player1.activeSelf == false && player2.activeSelf == false)
         {
 
             RessurectPlayer(player1, player1Hud);
