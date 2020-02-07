@@ -2029,6 +2029,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemTable (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2367382454954498672, guid: 1a7e36dfa86042542a5c585f4a7a554c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2367382454954498673, guid: 1a7e36dfa86042542a5c585f4a7a554c,
         type: 3}
       propertyPath: m_LocalPosition.x

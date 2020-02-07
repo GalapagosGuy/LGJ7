@@ -33,7 +33,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -0.009000778, y: 0}
+  m_AnchoredPosition: {x: -0.009002686, y: 0}
   m_SizeDelta: {x: 0.044, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1162937964764588065
@@ -64,8 +64,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162937964764588065}
   m_LocalRotation: {x: -0, y: 0.0000013709068, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.39}
-  m_LocalScale: {x: 0.0387, y: 0.09474844, z: 0.0387}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_Children:
   - {fileID: 3171197176924193056}
   - {fileID: 7860554154631113137}
@@ -74,7 +74,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.24, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.92}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7481632127789580028
@@ -173,9 +173,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265246523335312417}
-  m_LocalRotation: {x: 4.0856204e-14, y: 0.70710474, z: -0.000000029802319, w: 0.7071089}
-  m_LocalPosition: {x: 0, y: 29.2, z: 0}
-  m_LocalScale: {x: 34.453117, y: 34.453056, z: 34.453117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children:
   - {fileID: 7082560829085812036}
   m_Father: {fileID: 8434896925942373522}
@@ -303,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.0189991, y: 0}
+  m_AnchoredPosition: {x: -0.019001007, y: 0}
   m_SizeDelta: {x: -0.019, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6365357132280097575
@@ -717,19 +717,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7956871799681776522}
-  m_LocalRotation: {x: 0.4999993, y: -0.4999993, z: 0.5000024, w: 0.499999}
-  m_LocalPosition: {x: 0, y: 0, z: -9.5}
+  m_LocalRotation: {x: 0.5, y: -0.50000006, z: 0.50000006, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5296984, y: 0.51347744, z: 0.87669426}
   m_Children:
   - {fileID: 8325997367934642530}
   - {fileID: 164046773186993154}
   m_Father: {fileID: 8434896925942373522}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90.00001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.3, y: -3.8}
-  m_SizeDelta: {x: 37.047, y: 22.109}
+  m_AnchoredPosition: {x: 19.2, y: -39.2}
+  m_SizeDelta: {x: 34.38, y: 13.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4685473225889546258
 MonoBehaviour:
@@ -892,17 +892,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8993982100239848810}
-  m_LocalRotation: {x: 0.22232968, y: -0.63158154, z: 0.18202607, w: 0.7200978}
-  m_LocalPosition: {x: 0, y: 0, z: 0.199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0061180596, y: 0.0061180596, z: 0.0061180596}
   m_Children:
   - {fileID: 1461554027038901332}
   m_Father: {fileID: 3171197176924193056}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 33.376003, y: -82.89101, z: -1.2820001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 1.617}
+  m_AnchoredPosition: {x: -0, y: 0.919}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8736031575510019046
@@ -949,7 +949,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8993982100239848810}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a802035c77c4514a933674da57ce734, type: 3}
   m_Name: 
